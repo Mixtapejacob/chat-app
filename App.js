@@ -21,7 +21,6 @@ import Start from "./components/Start";
 import Chat from "./components/Chat";
 
 const App = () => {
-  // Your web app's Firebase configuration
   const firebaseConfig = {
       apiKey: "AIzaSyC37jUSY2qDSgXGj0x_fIrLosp5R2aFW3E",
     authDomain: "chat-app-ba239.firebaseapp.com",
@@ -33,11 +32,9 @@ const App = () => {
     measurementId: "G-C21KD3EWWF"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const storage = getStorage(app);
 
-  // Initialize Cloud Firestore and get a reference to the service
   const db = getFirestore(app);
 
   const connectionStatus = useNetInfo();
