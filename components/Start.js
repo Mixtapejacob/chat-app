@@ -11,7 +11,7 @@ import {
 import { getAuth, signInAnonymously } from "firebase/auth";
 import { Alert } from "react-native";
 
-import imageBackground from "../assets/BackgroundImage.png";
+import imageBackground from "../images/background-img.png";
 
 const Start = ({ navigation }) => {
   const [name, setName] = useState("");
@@ -70,8 +70,8 @@ const Start = ({ navigation }) => {
               onPress={() => setBackgroundColor("#b36eeb")}
             />
             <TouchableOpacity
-              style={[styles.colorButton, { backgroundColor: "#0000ff" }]}
-              onPress={() => setBackgroundColor("#0000ff")}
+              style={[styles.colorButton, { backgroundColor: "#ffc0cb" }]}
+              onPress={() => setBackgroundColor("#ffc0cb")}
             />
           </View>
           {/* Button to start chatting */}
