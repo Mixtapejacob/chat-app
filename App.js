@@ -1,7 +1,13 @@
 import {
+  StyleSheet,
+  TextInput,
+  View,
+  Text,
   Alert,
+  Button,
+  LogBox,
 } from "react-native";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { getStorage } from "firebase/storage";
@@ -21,20 +27,21 @@ import Start from "./components/Start";
 import Chat from "./components/Chat";
 
 const App = () => {
+  // Your web app's Firebase configuration
   const firebaseConfig = {
-      apiKey: "AIzaSyC37jUSY2qDSgXGj0x_fIrLosp5R2aFW3E",
-    authDomain: "chat-app-ba239.firebaseapp.com",
-    databaseURL: "https://chat-app-ba239-default-rtdb.firebaseio.com",
-    projectId: "chat-app-ba239",
-    storageBucket: "chat-app-ba239.appspot.com",
-    messagingSenderId: "845671438149",
-    appId: "1:845671438149:web:61862e9cf683a1b5a5d02c",
-    measurementId: "G-C21KD3EWWF"
+    apiKey: "AIzaSyAAJcZRUbJiTM8V3x3fVp3yl1bD_GGSMMA",
+    authDomain: "chat-app-29b02.firebaseapp.com",
+    projectId: "chat-app-29b02",
+    storageBucket: "chat-app-29b02.appspot.com",
+    messagingSenderId: "437117991531",
+    appId: "1:437117991531:web:fde7b93d1b2726934a4f2e",
   };
 
+  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const storage = getStorage(app);
 
+  // Initialize Cloud Firestore and get a reference to the service
   const db = getFirestore(app);
 
   const connectionStatus = useNetInfo();
